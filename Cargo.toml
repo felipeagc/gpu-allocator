@@ -25,7 +25,7 @@ thiserror = "1.0"
 presser = { version = "0.3" }
 # Only needed for vulkan.  Disable all default features as good practice,
 # such as the ability to link/load a Vulkan library.
-ash = { version = ">=0.34, <=0.37", optional = true, default-features = false, features = ["debug"] }
+ash = { git = "https://github.com/felipeagc/ash.git", optional = true, default-features = false, features = ["debug"] }
 # Only needed for visualizer.
 imgui = { version = "0.11", features = ["tables-api"], optional = true }
 
@@ -47,8 +47,8 @@ optional = true
 
 [dev-dependencies]
 # Enable the "loaded" feature to be able to access the Vulkan entrypoint.
-ash = { version = "0.37", default-features = false, features = ["debug", "loaded"] }
-ash-window = "0.12"
+ash = { git = "https://github.com/felipeagc/ash.git", default-features = false, features = ["debug", "loaded"] }
+ash-window = { git = "https://github.com/felipeagc/ash.git" }
 raw-window-handle = "0.5"
 winit = { version = "0.28", features = ["x11", "wayland"] }
 env_logger = "0.10"
